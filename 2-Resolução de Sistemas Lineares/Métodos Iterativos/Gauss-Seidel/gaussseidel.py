@@ -38,7 +38,7 @@ def gauss_jacobi(matriz,linhas,colunas,xn,erro,xanterior):						#Função que re
 		
 		i += 1
 	
-	d = d/abs(max(xn, key=abs))
+	d = maior/abs(max(xn, key=abs))
 	#Teste de erro
 	
 	if d < erro:
@@ -63,5 +63,6 @@ xanterior = x0.copy()				#Cópia de um x para usar no erro
 
 erro = 0.05							#Erro de entrada
 #Entradas######################################################
+
 final = gauss_jacobi(matriz,linhas,colunas,xn,erro,xanterior)		#Lista com o resultado final
 print(final)
