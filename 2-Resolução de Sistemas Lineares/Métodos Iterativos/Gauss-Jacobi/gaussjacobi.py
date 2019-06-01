@@ -41,27 +41,43 @@ def gauss_jacobi(matriz,linhas,colunas,xn,erro,resultado):						#Função que re
 	d = maior/abs(max(resultado, key=abs))
 	#Teste de erro
 	
+	print(resultado)
+	
 	if d < erro:
 		return resultado
 	else:
-		return gauss_jacobi(matriz,linhas,colunas,resultado,erro,resultado)		#Recursividade para continuar o algoritmo
+		return gauss_jacobi(matriz,linhas,colunas,resultado,erro,[0]*linhas)		#Recursividade para continuar o algoritmo
 
 
 #Main	
 
 #Entradas######################################################
-matriz = [[ 3,   1,  2],			#Matriz de entrada
-		  [ 2,   5, -3]]
+#Primeira entrada#######
+matriz1 = [[ 10,   2,  1,   7],			#Matriz de entrada
+		  [  1,   5,  1,  -8],
+		  [  2,   3, 10,   6]]
 
-linhas = 2							#Linhas da matriz de entrada
-colunas = 3							#Colunas da matriz de entrada
+linhas1 = 3							#Linhas da matriz de entrada
+colunas1 = 4							#Colunas da matriz de entrada
 
-x0 = [0, 0, 0]				#x0 de entrada
-xn = x0.copy()						#Cópia do x0
-resultado = [0]*linhas				#x final
+x01 = [0.7, -1.6, 0.6]			#x0 de entrada
+xn1 = x01.copy()						#Cópia do x0
+resultado1 = [0]*linhas1				#x final
 
-erro = 0.05							#Erro de entrada
+erro1 = 0.05							#Erro de entrada
+#Segunda Entrada#########
+matriz2 = [[ 3,   1,    2],			#Matriz de entrada
+		  [  2,   5,   -3]]
+
+linhas2 = 2							#Linhas da matriz de entrada
+colunas2 = 3							#Colunas da matriz de entrada
+
+x02 = [0, 0]			#x0 de entrada
+xn2 = x02.copy()						#Cópia do x0
+resultado2 = [0]*linhas2				#x final
+
+erro2 = 0.0000010							#Erro de entrada
 #Entradas######################################################
-final = gauss_jacobi(matriz,linhas,colunas,xn,erro,resultado)		#Lista com o resultado final
+final = gauss_jacobi(matriz2,linhas2,colunas2,xn2,erro2,resultado2)		#Lista com o resultado final
 
 print(final)
